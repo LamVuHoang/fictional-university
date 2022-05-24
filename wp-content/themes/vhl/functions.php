@@ -12,3 +12,18 @@ function add_theme_css_js()
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/build/index.js', array(), 1.0, true);
 }
 add_action('wp_enqueue_scripts', 'add_theme_css_js');
+
+function add_navigation()
+{
+    register_nav_menus([
+        'header-menu' => 'Header Menu',
+        'bottom-left-menu' => 'Bottom Left Menu',
+        'bottom-right-menu' => 'Bottom Right Menu',
+    ]);
+}
+add_action('init', 'add_navigation');
+
+function custom_theme() {
+    add_theme_support('title-tag');
+}
+add_action('wp_head', 'custom_theme');

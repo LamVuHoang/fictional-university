@@ -5,7 +5,7 @@
     <div class="page-banner__content container container--narrow">
         <h1 class="page-banner__title"><?= the_title() ?></h1>
         <div class="page-banner__intro">
-            <p>Learn how the school of your dreams got started.</p>
+            <p>This is Single Page of Post Blog</p>
         </div>
     </div>
 </div>
@@ -15,14 +15,6 @@
         <p>
             <a class="metabox__blog-home-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Back to About Us</a> <span class="metabox__main">Our History</span>
         </p>
-    </div>
-
-    <div class="page-links">
-        <h2 class="page-links__title"><a href="#">About Us</a></h2>
-        <ul class="min-list">
-            <li class="current_page_item"><a href="#">Our History</a></li>
-            <li><a href="#">Our Goals</a></li>
-        </ul>
     </div>
 
     <div class="generic-content">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fictional University</title>
+    <title><?php wp_title('') ?> - Fictional University</title>
     <?php wp_head() ?>
 </head>
 
@@ -17,15 +17,26 @@
             <span class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
             <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
             <div class="site-header__menu group">
-                <nav class="main-navigation">
+                <?php
+                wp_nav_menu([
+                    'menu' => 'header-menu',
+                    'menu_class' => '',
+                    'menu_id' => '',
+                    'container' => 'nav',
+                    'container_class' => 'main-navigation',
+
+                    'depth' => 1,
+                ]);
+                ?>
+                <!-- <nav class="main-navigation">
                     <ul>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Programs</a></li>
                         <li><a href="#">Events</a></li>
                         <li><a href="#">Campuses</a></li>
-                        <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                        <li><a href="</?= site_url('blog') ?>">Blog</a></li>
                     </ul>
-                </nav>
+                </nav> -->
                 <div class="site-header__util">
                     <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
                     <a href="#" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
