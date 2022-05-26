@@ -14,7 +14,7 @@ $wp_list_pages_args = [
 <div class="page-banner">
     <div class="page-banner__bg-image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/ocean.jpg)"></div>
     <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?= the_title() ?></h1>
+        <h1 class="page-banner__title"><?php the_title() ?></h1>
         <div class="page-banner__intro">
             <p>Learn how the school of your dreams got started.</p>
         </div>
@@ -40,7 +40,7 @@ $wp_list_pages_args = [
             <?php
             endif
             ?>
-            <span class="metabox__main"><?= the_title() ?></span>
+            <span class="metabox__main"><?php the_title() ?></span>
         </p>
     </div>
 
@@ -68,7 +68,7 @@ $wp_list_pages_args = [
     </div>
 
     <div class="generic-content">
-        <?= the_content() ?>
+        <?php the_content() ?>
     </div>
 </div>
 

@@ -23,7 +23,31 @@ function add_navigation()
 }
 add_action('init', 'add_navigation');
 
-function custom_theme() {
+function custom_theme()
+{
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 }
-add_action('wp_head', 'custom_theme');
+add_action('after_setup_theme', 'custom_theme');
+
+
+function bannerImage($bannerImageArgs = null)
+{
+?>
+    <div class="page-banner">
+
+        <?php if ($bannerImageArgs['image']) : ?>
+            <div class="page-banner__bg-image" style="background-image: url(<?= $bannerImageArgs['image'] ?>)"></div>
+        <?php else : ?>
+            <div class="page-banner__bg-image" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/ocean.jpg)"></div>
+        <?php endif; ?>
+        
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title"><?= $bannerImageArgs['title'] ?></h1>
+            <div class="page-banner__intro">
+                <p><?= $bannerImageArgs['intro'] ?></p>
+            </div>
+        </div>
+    </div>
+<?php
+}

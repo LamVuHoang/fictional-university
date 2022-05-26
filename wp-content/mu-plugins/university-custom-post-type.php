@@ -63,7 +63,7 @@ function create_post_type()
             'show_in_admin_bar' => true,
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-businessman',
-            'supports' => ['title', 'author', 'excerpt', 'comments', 'editor', 'custom-fields']
+            'supports' => ['title', 'author', 'comments', 'editor', 'thumbnail']
         ]
     );
 }

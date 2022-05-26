@@ -1,24 +1,50 @@
-<?php get_header() ?>
+<?php
+get_header();
 
-<div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/ocean.jpg)"></div>
-    <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?= the_title() ?></h1>
-        <div class="page-banner__intro">
-            <p>I'll fill it later</p>
-        </div>
+$banner_image = get_field('banner_image');
+bannerImage(array(
+    'title' => get_the_title(),
+    'intro' => 'This is a Single Subject Post',
+    'image' => $banner_image['url']
+));
+?>
+
+<div class="container container--narrow page-section">
+
+    <?php get_template_part('template-parts/breadcrumb', 'posttype') ?>
+
+    <div class="generic-content">
+        <?php the_content() ?>
     </div>
 </div>
 
-<div class="container container--narrow page-section">
-    <div class="metabox metabox--position-up metabox--with-home-link">
-        <p>
-            <a class="metabox__blog-home-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Back to About Us</a> <span class="metabox__main">Our History</span>
-        </p>
-    </div>
+<?php $relatedMember = get_field('teacher'); ?>
 
-    <div class="generic-content">
-        <?= the_content() ?>
+<div class="page-section page-section--white">
+    <div class="container container--narrow">
+        <h2 class="headline headline--medium"><?php the_title() ?> Member: </h2>
+
+        <ul class="professor-cards">
+            <?php
+            if (count($relatedMember) > 0) :
+                foreach ($relatedMember as $item) :
+            ?>
+                    <li class="professor-card__list-item">
+                        <a href="<?php echo $item->guid ?>" class="professor-card">
+                            <img class="professor-card__image" src="<?php echo get_the_post_thumbnail_url($item->ID) ?>" />
+                            <span class="professor-card__name"><?php echo $item->post_title ?></span>
+                        </a>
+                    </li>
+                <?php
+                endforeach;
+            else :
+                ?>
+                <li class="professor-card__list-item">
+                    Sorry, no Member in <?php the_title() ?> Subject
+                </li>
+            <?php endif; ?>
+        </ul>
+        <hr class="section-break" />
     </div>
 </div>
 
@@ -62,12 +88,12 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>">
-                                    <?= the_title() ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_title() ?>
                                 </a>
                             </h5>
-                            <p><?= the_excerpt() ?>
-                                <a href="<?= the_permalink() ?>" class="nu gray">Learn more</a>
+                            <p><?php the_excerpt() ?>
+                                <a href="<?php the_permalink() ?>" class="nu gray">Learn more</a>
                             </p>
                         </div>
                     </div>
@@ -123,12 +149,12 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>">
-                                    <?= the_title() ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_title() ?>
                                 </a>
                             </h5>
-                            <p><?= the_excerpt() ?>
-                                <a href="<?= the_permalink() ?>" class="nu gray">Learn more</a>
+                            <p><?php the_excerpt() ?>
+                                <a href="<?php the_permalink() ?>" class="nu gray">Learn more</a>
                             </p>
                         </div>
                     </div>

@@ -44,8 +44,8 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>">
-                                    <?= the_title() ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_title() ?>
                                 </a>
                             </h5>
                             <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and snacks. <a href="#" class="nu gray">Learn more</a></p>
@@ -94,12 +94,12 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>">
-                                    <?= the_title() ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_title() ?>
                                 </a>
                             </h5>
-                            <p><?= the_excerpt() ?>
-                                <a href="<?= the_permalink() ?>" class="nu gray">
+                            <p><?php the_excerpt() ?>
+                                <a href="<?php the_permalink() ?>" class="nu gray">
                                     Read more
                                 </a>
                             </p>

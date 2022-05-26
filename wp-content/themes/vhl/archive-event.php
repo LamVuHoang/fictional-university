@@ -1,14 +1,13 @@
-<?php get_header() ?>
+<?php 
+get_header();
 
-<div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/ocean.jpg)"></div>
-    <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title">The Event Archive</h1>
-        <div class="page-banner__intro">
-            <p>I'll fill it later</p>
-        </div>
-    </div>
-</div>
+$banner_image = get_field('banner_image');
+bannerImage(array(
+    'title' => 'The Event Archive',
+    'intro' => 'I\'ll fill it later',
+    'image' => $banner_image['url']
+));
+?>
 
 <div class="full-width-split group">
     <div class="full-width-split__one">
@@ -38,7 +37,7 @@
                     $new_events->the_post();
             ?>
                     <div class="event-summary">
-                        <a class="event-summary__date t-center" href="<?= the_permalink() ?>" style="background-color: grey;">
+                        <a class="event-summary__date t-center" href="<?php the_permalink() ?>" style="background-color: grey;">
                             <span class="event-summary__month">
                                 <?= get_the_date('M') ?>
                             </span>
@@ -48,9 +47,9 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>"><?= the_title() ?></a>
+                                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                             </h5>
-                            <p><?= the_excerpt() ?></p>
+                            <p><?php the_excerpt() ?></p>
                         </div>
                     </div>
 
@@ -90,7 +89,7 @@
                     $new_events->the_post();
             ?>
                     <div class="event-summary">
-                        <a class="event-summary__date t-center" href="<?= the_permalink() ?>" style="background-color: red;">
+                        <a class="event-summary__date t-center" href="<?php the_permalink() ?>" style="background-color: red;">
                             <span class="event-summary__month">
                                 <?= get_the_date('M') ?>
                             </span>
@@ -100,9 +99,9 @@
                         </a>
                         <div class="event-summary__content">
                             <h5 class="event-summary__title headline headline--tiny">
-                                <a href="<?= the_permalink() ?>"><?= the_title() ?></a>
+                                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                             </h5>
-                            <p><?= the_excerpt() ?></p>
+                            <p><?php the_excerpt() ?></p>
                         </div>
                     </div>
 
