@@ -8,18 +8,26 @@
 /wp-admin/
 /wp-content/index.php
 /wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/plugins/advanced-custom-fields/*
-/wp-content/plugins/regenerate-thumbnails/*
-/wp-content/themes/index.php
-/wp-content/themes/vhl/node_modules/*
-/wp-content/plugins/imagemagick-engine/*
+
+
 /wp-includes/
 /index.php
 /license.txt
 /readme.html
 /wp-*.php
 /xmlrpc.php
+
+#Themes
+/wp-content/themes/index.php
+/wp-content/themes/vhl/node_modules/*
+
+#Plugins
+/wp-content/plugins/manual-image-crop 
+/wp-content/plugins/members
+/wp-content/plugins/imagemagick-engine/*
+/wp-content/plugins/index.php
+/wp-content/plugins/advanced-custom-fields/*
+/wp-content/plugins/regenerate-thumbnails/*
 
 # Configuration
 wp-config.php
